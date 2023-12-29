@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["id", "nickname"],
+    "properties": {
+        "id": {
+            "type": "integer",
+            "errorMessage": {
+                "type": "id should be integer"
+            }
+        },
+        "nickname": {
+            "type": "string",
+            "maxLength": 100,
+            "errorMessage": {
+                "maxLength": "nickname should be lesser than 100",
+                "type": "nickname should be string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "errorMessage": {
+        "type": "Payload should be an object",
+        "required": {
+            "id": "id is required",
+            "nickname": "nickname is required"
+        }
+    }
+}

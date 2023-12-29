@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["pokemon_id", "pokemon_name", "image_url", "nickname"],
+    "properties": {
+        "pokemon_id": {
+            "type": "integer",
+            "errorMessage": {
+                "type": "pokemon_id should be integer"
+            }
+        },
+        "pokemon_name": {
+            "type": "string",
+            "maxLength": 100,
+            "errorMessage": {
+                "maxLength": "pokemon_name should be lesser than 100",
+                "type": "pokemon_name should be string"
+            }
+        },
+        "image_url": {
+            "type": "string",
+            "errorMessage": {
+                "type": "image_url should be string"
+            }
+        },
+        "nickname": {
+            "type": "string",
+            "maxLength": 100,
+            "errorMessage": {
+                "maxLength": "nickname should be lesser than 100",
+                "type": "nickname should be string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "errorMessage": {
+        "type": "Payload should be an object",
+        "required": {
+            "pokemon_id": "pokemon_id is required",
+            "pokemon_name": "pokemon_name is required",
+            "image_url": "image_url is required",
+            "nickname": "nickname is required"
+        }
+    }
+}
